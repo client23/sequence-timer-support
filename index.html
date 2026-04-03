@@ -87,7 +87,22 @@
         }
 
         .actions {
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .primary-action {
+            display: flex;
+            justify-content: center;
+        }
+
+        .primary-action .button {
+            min-width: min(100%, 320px);
+        }
+
+        .secondary-actions {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
         }
 
         .grid {
@@ -202,10 +217,14 @@
             </div>
 
             <div class="actions">
-                <a class="button primary" href="mailto:phasekit.support@gmail.com">Contact Support</a>
-                <a class="button" href="support.html">Open Support Page</a>
-                <a class="button" href="privacy-policy.html">Open Privacy Policy</a>
-                <a class="button" href="terms.html">Open Terms of Use</a>
+                <div class="primary-action">
+                    <a class="button primary" href="mailto:phasekit.support@gmail.com">Contact Support</a>
+                </div>
+                <div class="secondary-actions">
+                    <a class="button" href="support.html">Open Support Page</a>
+                    <a class="button" href="privacy-policy.html">Open Privacy Policy</a>
+                    <a class="button" href="terms.html">Open Terms of Use</a>
+                </div>
             </div>
 
             <p class="micro-note">Privacy-forward by design: SequenceTimer works primarily on-device, does not include third-party ads, and does not track you across apps or websites.</p>
