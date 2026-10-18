@@ -37,8 +37,8 @@ Public URLs (legacy, still deployed):
 
 Deployment:
 
-- deployment is manual: `zsh SequenceTimer/Scripts/deploy_support_site.sh`
-  (there is intentionally no CI workflow; see `SequenceTimer/Scripts/README.md`)
+- deployment is manual: `zsh scripts/deploy_support_site.sh`
+  (there is intentionally no CI workflow; see `scripts/README.md`)
 - the script syncs this folder into the dedicated support repository
   `git@github.com:client23/sequence-timer-support.git` using your local SSH access
 - `SUPPORT_SITE_DRY_RUN=1` shows the changes it would deploy (committed in a
