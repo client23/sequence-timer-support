@@ -1,62 +1,14 @@
-# PhaseKit Support Site
+# PhaseKit Legacy Support Site (redirects)
 
-This folder contains the static public support website for PhaseKit.
+The old GitHub Pages site (`https://client23.github.io/sequence-timer-support/`) was retired with
+PhaseKit 3.0. Each page now only redirects to its domtelier.com equivalent:
 
-Contents:
+- `index.html` -> https://domtelier.com/apps/phasekit
+- `support.html` -> https://domtelier.com/apps/phasekit/support
+- `privacy-policy.html` -> https://domtelier.com/apps/phasekit/privacy
+- `terms.html` -> https://domtelier.com/apps/phasekit/terms
+- `404.html` (any other path) -> https://domtelier.com/apps/phasekit
 
-- `index.html`
-- `support.html`
-- `privacy-policy.html`
-- `terms.html`
-- `404.html`
-- `styles.css`
-- `.well-known/apple-app-site-association.sample.json`
-
-Purpose:
-
-- App Store support URL
-- App Store privacy policy URL
-- public legal and support contact pages
-- source of truth for the dedicated GitHub Pages repository
-
-Note: the migration to domtelier.com is now done. `https://domtelier.com/apps/phasekit`
-is the primary marketing/company page, and `https://domtelier.com/apps/phasekit/privacy`
-and `/support` are the Privacy Policy and Support URLs configured in App Store
-Connect metadata (see `AppStoreMetadata.md`). Those pages are built from the separate
-`site/domtelier` repository (`app/lib/legal.ts`), so privacy or terms changes
-must be made there too. The GitHub Pages site below is legacy — keep it live as
-a fallback, but it's no longer the URL App Store Connect metadata or in-app
-links point to.
-
-Public URLs (legacy, still deployed):
-
-- Main support page: `https://client23.github.io/sequence-timer-support/index.html`
-- Privacy policy: `https://client23.github.io/sequence-timer-support/privacy-policy.html`
-- Support page: `https://client23.github.io/sequence-timer-support/support.html`
-- Terms of use: `https://client23.github.io/sequence-timer-support/terms.html`
-
-Deployment:
-
-- deployment is manual: `zsh scripts/deploy_support_site.sh`
-  (there is intentionally no CI workflow; see `scripts/README.md`)
-- the script syncs this folder into the dedicated support repository
-  `git@github.com:client23/sequence-timer-support.git` using your local SSH access
-- `SUPPORT_SITE_DRY_RUN=1` shows the changes it would deploy (committed in a
-  throwaway clone) without pushing
-
-Local preview:
-
-```sh
-cd SupportSite
-python3 -m http.server 8000
-```
-
-Then open:
-
-- `http://localhost:8000`
-
-Notes:
-
-- `404.html` keeps GitHub Pages fallback behavior clean
-- `.well-known/apple-app-site-association.sample.json` is a placeholder template only; it is not active until renamed and populated with real app identifiers
-- update these pages together with App Store pricing, in-app purchase, or privacy-impacting feature changes
+Keep it online: App Store listings of older versions, caches and external links still use these
+URLs. Content changes belong in `site/domtelier` (`app/lib/legal.ts`), not here.
+Deploy with `zsh scripts/deploy_support_site.sh` (`SUPPORT_SITE_DRY_RUN=1` first).
